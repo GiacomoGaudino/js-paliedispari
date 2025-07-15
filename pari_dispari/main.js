@@ -10,10 +10,18 @@ function askEvenOrOdd() {
         return askEvenOrOdd();  // richiamo ricorsivo finché non va bene
     }
 }
-
 const evenOrOdd = askEvenOrOdd();
 console.log("Hai scelto:", evenOrOdd);
-const user_number = prompt("inserisci un numero da 1 a 5");
+function askNumber() {
+    const input = Number(prompt("inserisci un numero da 1 a 5"));
+    if (input === 1 || input === 2 || input === 3 || input === 4 || input === 5) {
+        return input; // input valido
+    } else {
+        alert("Per favore, inserisci un numero da 1 a 5");
+        return askNumber(); // richiamo finchè non si inserisce un numero da 1 a 5
+    }
+}
+const user_number = askNumber();
 console.log(user_number);
 
 //Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
