@@ -2,23 +2,21 @@
 
 // Chiedere all’utente di inserire una parola
 let user_word = prompt("inserisci una parola o una frase").toLowerCase();
-user_word_without_space = user_word.replace(/ /g, "");
+let user_word_without_space = user_word.replace(/ /g, "");
 console.log(user_word_without_space);
 
 // Creare una funzione per capire se la parola inserita è palindroma
-function reverseWord(user_word_without_space) {
+function reverseWord(word) {
     let wordReverse = ""
-    for (let i = user_word_without_space.length - 1; i >= 0; i--) {
-        const thisWordReverse = user_word_without_space[i];
-        wordReverse += thisWordReverse;
+    for (let i = word.length - 1; i >= 0; i--) {
+        wordReverse += word[i];
     }
     return wordReverse;
 }
 const wordReverse = reverseWord(user_word_without_space);
-const wordReverseWithoutSpace = wordReverse.replace(/ /g, "");
-console.log(wordReverseWithoutSpace);
+console.log(wordReverse);
 
-if (user_word_without_space === wordReverseWithoutSpace) {
+if (user_word_without_space === wordReverse) {
     console.log("la parola è palindroma");
     alert("la parola è palindroma");
 } else {
